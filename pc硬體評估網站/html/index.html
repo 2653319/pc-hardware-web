@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>		
+/*上標題欄*/
+/*按鈕背景顏色*/
+div.scrollmenu {
+  background-color:black;
+  overflow: auto;
+  white-space: nowrap;
+}
+/*文字調整*/
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+/*滑鼠移到上標題欄時顯示的顏色*/
+div.scrollmenu a:hover {
+  background-color: #777;
+}
+
+
+/*右側標題欄*/
+
+/*靠右主體*/  
+body {		 /*包含全部的body內容*/
+  font-family: "Lato", sans-serif;
+  background-color: rgb(247, 235, 220);
+}
+/*整體欄位調整*/
+div2.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/*字體*/
+div2.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+/*滑鼠移到上標題欄時顯示的顏色*/
+div2.sidenav a:hover {
+  color: #f1f1f1;
+}
+/*刪掉沒影響*/
+div2.main {
+  margin-right: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+/*刪掉沒影響*/
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+</style>
+</head>
+<body >
+<div class="scrollmenu"><!--至頂欄位-->
+  <a href="#home">PC硬體線上購物平台</a>
+</div>
+
+<div2 class="sidenav"> <!--右側欄位-->
+  <a href="#about">關於我們</a>
+  <a href="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/html/registered.html">註冊</a>
+  <a href="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/html/login.html">登入</a>
+</div2>
+
+<button class="btn" onclick="Laptopjs()" style="position:absolute;top:100px;left:50px;" name = "Laptop" id ="Laptop"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Laptop.jpg" width="100" height="100" ></button><!--放置圖片按鈕-->
+<button class="btn" onclick="CPUjs()" style="position:absolute;top:100px;left:250px;" name = "CPU" id = "CPU"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/CPU.jpg" width="100" height="100" ></button>
+<button class="btn" onclick="Motherboardjs()" style="position:absolute;top:100px;left:450px;" name = "Motherboard" id = "Motherboard"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Motherboard.jpg" width="100" height="100" ></button>
+<button class="btn" onclick="RAMjs()" style="position:absolute;top:100px;left:650px;" name = "RAM" id = "RAM"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/RAM.jpg" width="100" height="100" ></button>
+<button class="btn" onclick="SSDjs()" style="position:absolute;top:100px;left:850px;" name = "SSD" id = "SSD"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/SSD.jpg" width="100" height="100" ></button>
+<p style="position:absolute;top:200px;left:50px;">Laptop</p>
+<p style="position:absolute;top:200px;left:250px;">CPU</p>
+<p style="position:absolute;top:200px;left:450px;">Motherboard</p>
+<p style="position:absolute;top:200px;left:650px;">RAM</p>
+<p style="position:absolute;top:200px;left:850px;">SSD</p>
+
+<select name="Laptop" id="Laptopjs"  style="position:absolute;top:240px;left:50px;width:920px; height:25px;"  > <!--下拉式選單 位子 寬度  隱藏 visibility: hidden; -->
+  <option name="GV301QH-0072A5900H"  value="13">華碩 ROG Flow X13 GV301QH-0072A5900H(黑)(R9-5900HS/16G/1T/1650 4G/QHD) , $47900</option><!--選單項目-->
+  <option name="A11MT"               value="13">MSI Summit E13 Flip Evo A11MT[031TW]i7-1185G7/32G/1T SSD/UMA/PRO/翻轉觸控, $52900</option>
+  <option name="UX482EG-0031A1135G7" value="15">華碩 UX482EG-0031A1135G7(蒼宇藍)(i5-1135G7/16G/512G/MX450-2G) 觸控筆電, $54900</option>
+  <option name="81YT001WTW"          value="15">Lenovo Legion 7 (81YT001WTW)(黑)(i7-10750H/16G/1T SSD/RTX2070-8G)240Hz, $53900</option>
+  <option name="10UEK"               value="17">MSI GF75 10UEK[068TW] i7-10750H/16G/1T SSD/3060-6G/144Hz RTX 30 系列, $46500</option>
+  <option name="10UE"                value="17">MSI GE76 10UE[263TW] i7-10870H/16G/2T SSD/3060-6G RTX 30 系列, $59900</option>
+</select>
+
+<select name="CPU" id="CPUjs"  style="position:absolute;top:240px;left:50px;width:920px; height:25px;"  > <!--下拉式選單 位子 寬度  隱藏 visibility: hidden; -->
+  <option name="i3_1115G4"  value="Intel®">Intel® Core™ i3-1115G4 處理器（6M 快取記憶體，最高可達 4.10 GHz),$7780</option><!--選單項目-->
+  <option name="i5_11600K"  value="Intel®">Intel® Core™ i5-11600K Processor (12M 快取記憶體, 最高可達 4.90 GHz), $8880</option>
+  <option name="i5_11600K"  value="Intel®">Intel® Core™ i7-11700K Processor (16M 快取記憶體, 最高可達 5.00 GHz), $12200</option>
+  <option name="i5_11600K"  value="Intel®">Intel® Core™ i9-11900K Processor (16M 快取記憶體, 最高可達 5.30 GHz), $17700</option>
+  <option name="R3-3300X"   value="AMD">AMD R3 3300X【4核/8緒】3.8G(↑4.3G)65W/32M/ AM4/7nm $3800</option>
+  <option name="R5-5600X"   value="AMD">AMD R5 5600X【6核/12緒】3.7G(↑4.6G)65W/32M/ AM4/7nm $8970</option>
+  <option name="R7-5800X"   value="AMD">AMD R7 5800X【8核/16緒】3.8G(↑4.7G)105W/32M/ AM4/7nm $13470</option>
+  <option name="R9-5950X"   value="AMD">AMD R9 5950X【16核/32緒】3.4G(↑4.9G)/ 105W/ 64M/AM4/7nm $24970</option>
+</select>
+
+<select name="Motherboard" id="Motherboardjs"  style="position:absolute;top:240px;left:50px;width:920px; height:25px;"  > <!--下拉式選單 位子 寬度  隱藏 visibility: hidden; -->
+  <option name="A520M-K"    value="AM4">華碩 PRIME A520M-K/CSM(M-ATX/1A1H/Realtek LAN), $2390</option><!--選單項目-->
+  <option name="B550-E"     value="AM4">華碩 ROG STRIX B550-E GAMING(ATX/1H1P/Ｉ網2.5G/ax+BT5.1/註五年)14+2相供電, $6990</option>
+  <option name="X570-E"     value="AM4">華碩 ROG STRIX X570-E GAMING(ATX/1H1P/2.5G LAN+Ｉ網/ax/註五年)12+4供電, $9990</option>
+  <option name="H510M-E"   value="1200">華碩 PRIME H510M-E/CSM(M-ATX/1A1H1P/Intel 1Gb) , $2690</option>
+  <option name="B560M-PLUS"   value="1200">華碩 TUF GAMING B560M-PLUS【獨家TUF】(M-ATX/1H1P/2.5G) 8+1相供電, $3490</option>
+  <option name="Z590_AORUS_MASTER"   value="1200">技嘉 Z590 AORUS MASTER(ATX/1H/Aquantia 10G/ax) 18+1相全數位供電, $15990</option>
+</select>
+
+<select name="RAM" id="RAMjs"  style="position:absolute;top:240px;left:50px;width:920px; height:25px;"  > <!--下拉式選單 位子 寬度  隱藏 visibility: hidden; -->
+  <option name="UMAX-DDR3-1600"    value="Desktop">UMAX 4GB DDR3-1600(512*8), $550</option><!--選單項目-->
+  <option name="XPG_SPECTRIX_D50"     value="Desktop">威剛 16GB DDR4-3000 XPG SPECTRIX D50 RGB幾何幻光/CL16(2048*8)(銀河灰), $2149</option>
+  <option name="XPG_SPECTRIX_D60G"     value="Desktop">威剛 16GB(8G*2)D4-4133 XPG SPECTRIX D60G RGB綺旎幻光/CL19 三星B-DIE, $4199</option>
+  <option name="UMAX-DDR4-2666-NB"   value="NB">UMAX NB 8GB DDR4-2666(1024*8)相容所有新、舊款CPU, $1150</option>
+  <option name="ADATA_16GB_DDR4-2666 "   value="NB">威剛 NB 16GB DDR4-2666(1024*8), $2180</option>
+  <option name="Kingston_NB_32GB_DDR4-3200"   value="NB">金士頓 NB 32GB DDR4-3200(KVR32S22D8/32)(2048*8),$4750</option>
+</select>
+
+<select name="SSD" id="SSDjs"  style="position:absolute;top:240px;left:50px;width:920px; height:25px;"  > <!--下拉式選單 位子 寬度  隱藏 visibility: hidden; -->
+  <option name="UMAX-DDR3-1600"    value="2.5">十銓 T-Force Vulcan火神 500G/2.5吋 讀:560MB寫:510MB/3D NAND Flash, $1850</option><!--選單項目-->
+  <option name="XPG_SPECTRIX_D50"     value="2.5">金士頓 A400 960G/2.5吋/讀:500M/寫:450M/TLC顆粒, $2500</option>
+  <option name="XPG_SPECTRIX_D60G"     value="2.5">WD Green 2TB(綠 標)/2.5吋/讀:540M/寫:430M/TLC顆粒, $5490</option>
+  <option name="UMAX-DDR4-2666-NB"   value="M.2PCIE">WD 黑標 SN850 500G/Gen4 PCIe*4/讀:7000/寫:4100/TLC, $3600</option>
+  <option name="ADATA_16GB_DDR4-2666 "   value="M.2PCIE">WD 黑標 SN850 1TB/Gen4 PCIe*4/讀:7000/寫:5300/TLC, $6250</option>
+  <option name="Kingston_NB_32GB_DDR4-3200"   value="M.2PCIE">WD 黑標 SN850 1TB/含散熱片Gen4 PCIe*4/讀:7000/寫:5300/TLC, $6990</option>
+</select>
+
+
+<h4 style="position:absolute;top:290px;left:50px;">進階搜尋</h4>
+
+
+<button class="btn" onclick="Laptopjs2()" style="position:absolute;top:340px;left:50px;" name = "Magnifier" id = "Magnifier"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Magnifier.jpg" width="10" height="10" ></button><!--放大鏡按鈕-->
+<button class="btn" onclick="CPUjs2()" style="position:absolute;top:340px;left:250px;" name = "Magnifier2" id = "Magnifier2"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Magnifier.jpg" width="10" height="10" ></button>
+<button class="btn" onclick="Motherboardjs2()" style="position:absolute;top:340px;left:450px;" name = "Magnifier3" id = "Magnifier3"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Magnifier.jpg" width="10" height="10" ></button>
+<button class="btn" onclick="RAMjs2()" style="position:absolute;top:340px;left:650px;" name = "Magnifier4" id = "Magnifier4"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Magnifier.jpg" width="10" height="10" ></button>
+<button class="btn" onclick="SSDjs2()" style="position:absolute;top:340px;left:850px;" name = "Magnifier5" id = "Magnifier5"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Magnifier.jpg" width="10" height="10" ></button>
+
+
+<form style="position:absolute;top:370px;left:50px;visibility: hidden;" id="Laptopjs2" ><!--checkbox-->
+  <input type="radio" id="vehicle0" name="inch" value="13">13吋
+  <input type="radio" id="vehicle2" name="inch" value="15">15吋
+  <input type="radio" id="vehicle3" name="inch" value="17">17吋
+</form>
+
+<form style="position:absolute;top:370px;left:250px;visibility: hidden;" id="CPUjs2" ><!--checkbox-->
+  <input type="radio" id="vehicle0" name="Label" value="Intel®">Intel®
+  <input type="radio" id="vehicle2" name="Label" value="AMD">AMD
+</form>
+
+<form style="position:absolute;top:370px;left:450px;visibility: hidden;" id="Motherboardjs2" ><!--checkbox-->
+  <input type="radio" id="vehicle0" name="Label" value="AM4">AMD AM4腳位
+  <input type="radio" id="vehicle2" name="Label" value="1200">INTEL 1200腳位
+</form>
+
+<form style="position:absolute;top:370px;left:650px;visibility: hidden;" id="RAMjs2" ><!--checkbox-->
+  <input type="radio" id="vehicle0" name="Label" value="Desktop">桌上型
+  <input type="radio" id="vehicle2" name="Label" value="NB">筆記型
+</form>
+
+<form style="position:absolute;top:370px;left:850px;visibility: hidden;" id="SSDjs2" ><!--checkbox-->
+  <input type="radio" id="vehicle0" name="Label" value="2.5">2.5吋
+  <input type="radio" id="vehicle2" name="Label" value="M.2PCIE">M.2 PCIE
+</form>
+
+<!------------------------------------------------------------------->
+
+<button class="btn" onclick="HDDjs()" style="position:absolute;top:400px;left:50px;" name = "HDD" id = "HDD"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/HDD.jpg" width="100" height="100" ></button><!--放置圖片按鈕-->
+<button class="btn" onclick="VGAjs()" style="position:absolute;top:400px;left:250px;" name = "VGA" id = "VGA"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/VGA.jpg" width="100" height="100" ></button>
+<button class="btn" onclick="Screenjs()" style="position:absolute;top:400px;left:450px;" name = "Screen" id = "Screen"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Screen.jpg" width="100" height="100" ></button>
+<button class="btn" onclick="CASEjs()" style="position:absolute;top:400px;left:650px;" name = "CASE" id = "CASE"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/CASE.jpg" width="100" height="100" ></button>
+<button class="btn" onclick="PowerSupplyjs()" style="position:absolute;top:400px;left:850px;" name = "PowerSupply" id = "PowerSupply"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/power supply.jpg" width="100" height="100" ></button>
+
+<p style="position:absolute;top:500px;left:50px;">HDD</p>
+<p style="position:absolute;top:500px;left:250px;">VGA</p>
+<p style="position:absolute;top:500px;left:450px;">Screen</p>
+<p style="position:absolute;top:500px;left:650px;">CASE</p>
+<p style="position:absolute;top:500px;left:850px;">PowerSupply</p>
+
+<select name="HDD" id="HDDjs"  style="position:absolute;top:540px;left:50px;width:917px;height:25px;"  > <!--下拉式選單 位子 寬度  隱藏  -->
+  <option name="DT01ACA100"    value="NaN">Toshiba 1TB (32M/7200轉/三年保)(DT01ACA100), $1230</option><!--選單項目-->
+  <option name="DT02ABA200"     value="NaN">Toshiba 2TB (128M/5400轉/三年保)(DT02ABA200), $1630</option>
+  <option name="DT02ABA400"     value="NaN">Toshiba 4TB (128M/5400轉/三年保)(DT02ABA400), $2750</option>
+  <option name="MD06ACA600"   value="NaN">Toshiba 6TB (256M/7200轉/三年保)(MD06ACA600), $5100</option>
+  <option name="ST18000NE000"   value="NaN">Seagate 18TB【那嘶狼 PRO】256M/7200轉/五年/3年 Rescue(ST18000NE000), $18900</option>
+</select>
+
+<select name="VGA" id="VGAjs"  style="position:absolute;top:540px;left:50px;width:917px;height:25px;"  > <!--下拉式選單 位子 寬度  隱藏  -->
+  <option name="GTX1660"    value="NVIDIA">技嘉 GTX1660 OC 6G(1830MHz/22.4cm/雙風扇) $10290</option><!--選單項目-->
+  <option name="RTX2060"     value="NVIDIA">華碩 DUAL-RTX2060-O6G-EVO(1785MHz/24.2cm/雙風扇) $14790</option>
+  <option name="RTX3090"     value="NVIDIA">技嘉 AORUS RTX3090 XTREME 24G(1860MHz/31.9cm/三風扇) $63990</option>
+  <option name="RX6700"   value="AMD">微星 RX 6700 XT MECH 2X 12G OC(2620MHz/24.7cm/雙風扇) $23900</option>
+  <option name="RX6900XT"   value="AMD">華擎 RX 6900 XT OC Formula 16GB(2475MHz/33.2cm) $68990</option>
+  <option name="WX9100"   value="AMD">AMD Radeon Pro WX9100 (16GB HBM2 ECC/SP:4096/6螢幕輸出/三年保) $105000</option>
+</select>
+
+<select name="Screen" id="Screenjs"  style="position:absolute;top:540px;left:50px;width:917px;height:25px;"  > <!--下拉式選單 位子 寬度  隱藏  -->
+  <option name="20CH1Q"    value="22DOWN">AOPEN 20CH1Q bi(1A1H/5ms/TN/無喇叭)低藍光.不閃爍, $2699</option><!--選單項目-->
+  <option name="VP228HE"     value="22_24">華碩 VP228HE(1A1H/1ms/TN/含喇叭)低藍光.無閃爍, $3488</option>
+  <option name="C24RG50FQC"     value="24_27">三星 C24RG50FQC(2H1P/4ms/VA曲面/144Hz/無喇叭/FreeSync)暗黑穩定器.不閃.低藍, $5950</option>
+  <option name="C27RG50FQC"   value="27_32">三星 C27RG50FQC(2H1P/4ms/VA曲面/240Hz/Adaptive-Sync) $12900</option>
+  <option name="MX32VQ"   value="32UP">華碩 MX32VQ(2H1P/4ms/VA曲面/含喇叭)低藍光.不閃屏, $12990</option>
+</select>
+
+<select name="CASE" id="CASEjs"  style="position:absolute;top:540px;left:50px;width:917px;height:25px;"  > <!--下拉式選單 位子 寬度  隱藏  -->
+  <option name="DT01ACA100"    value="AM4">曜越 The Tower 100 黑 /全景直立式/三面玻璃透側/ITX $3990</option><!--選單項目-->
+  <option name="DT02ABA200"     value="AM4">Toshiba 2TB (128M/5400轉/三年保)(DT02ABA200), $1630</option>
+  <option name="DT02ABA400"     value="AM4">Toshiba 4TB (128M/5400轉/三年保)(DT02ABA400), $2750</option>
+  <option name="MD06ACA600"   value="1200">Toshiba 6TB (256M/7200轉/三年保)(MD06ACA600), $5100</option>
+  <option name="ST18000NE000"   value="1200">Seagate 18TB【那嘶狼 PRO】256M/7200轉/五年/3年 Rescue(ST18000NE000), $18900</option>
+</select>
+
+<select name="PowerSupply" id="PowerSupplyjs"  style="position:absolute;top:540px;left:50px;width:917px;height:25px;"  > <!--下拉式選單 位子 寬度  隱藏  -->
+  <option name="GPS-350HB"   value="400W">台達 350W/銅牌/GPS-350HB A, $1190</option><!--選單項目-->
+  <option name="SF-450"   value="400W~600W">海盜船 SF-450(450W) 金牌/全模/日系電容, $3190</option>
+  <option name="Toughpower"   value="600W~800W">曜越 Toughpower Grand RGB 750W(12V連動版)金牌/全日系/全模/DC-DC, $3990</option>
+  <option name="V850GOLDV2"   value="800W~1000W">酷碼 V850 GOLD V2 850W(白殼) 雙8/金牌/全模組/LLC+DC-DC, $4590</option>
+  <option name="ROGSTRIX1000W"   value="1000W">華碩 ROG STRIX 1000W 雙8/金牌/全模組/磁吸式銘牌, $4990</option>
+</select>
+
+
+<h4 style="position:absolute;top:590px;left:50px;">進階搜尋</h4>
+
+<button class="btn" onclick="HDDjs2()" style="position:absolute;top:640px;left:50px;" name = "Magnifier6" id = "Magnifier6"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Magnifier.jpg" width="10" height="10" ></button>
+<button class="btn" onclick="VGAjs2()" style="position:absolute;top:640px;left:250px;" name = "Magnifier7" id = "Magnifier7"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Magnifier.jpg" width="10" height="10" ></button>
+<button class="btn" onclick="Screenjs2()" style="position:absolute;top:640px;left:450px;" name = "Magnifier8" id = "Magnifier8"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Magnifier.jpg" width="10" height="10" ></button>
+<button class="btn" onclick="CASEjs2()" style="position:absolute;top:640px;left:650px;" name = "Magnifier9" id = "Magnifier9"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Magnifier.jpg" width="10" height="10" ></button>
+<button class="btn" onclick="PowerSupplyjs2()" style="position:absolute;top:640px;left:850px;" name = "Magnifier10" id = "Magnifier10"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Magnifier.jpg" width="10" height="10" ></button>
+
+<form style="position:absolute;top:670px;left:50px;visibility: hidden;" id="HDDjs2" ><!--checkbox-->
+  <input type="radio" id="vehicle0" name="Label" value="NaN">NaN
+</form>
+
+<form style="position:absolute;top:670px;left:250px;visibility: hidden;" id="VGAjs2" ><!--checkbox-->
+  <input type="radio" id="vehicle0" name="Label" value="NaN">NVIDIA晶片
+  <input type="radio" id="vehicle0" name="Label" value="NaN">AMD晶片
+</form>
+
+<form style="position:absolute;top:670px;left:450px;visibility: hidden;" id="Screenjs2" ><!--checkbox-->
+  <input type="radio" id="vehicle0" name="inch" value="22DOWN">22吋以下
+  <input type="radio" id="vehicle0" name="inch" value="22_24">22~24吋
+  <input type="radio" id="vehicle0" name="inch" value="24_27">24~27吋
+  <input type="radio" id="vehicle0" name="inch" value="27_32">27~32吋
+  <input type="radio" id="vehicle0" name="inch" value="32UP">32吋以上
+</form>
+
+<form style="position:absolute;top:670px;left:650px;visibility: hidden;" id="CASEjs2" ><!--checkbox-->
+  <input type="radio" id="vehicle0" name="Label" value="ITX">ITX
+  <input type="radio" id="vehicle0" name="Label" value="M-ATX">M-ATX
+  <input type="radio" id="vehicle0" name="Label" value="ATX">ATX
+  <input type="radio" id="vehicle0" name="Label" value="E-ATX">E-ATX
+</form>
+
+<form style="position:absolute;top:670px;left:850px;visibility: hidden;" id="PowerSupplyjs2" ><!--checkbox-->
+  <input type="radio" id="vehicle0" name="Label" value="400WDOWN">400WDOWN
+  <input type="radio" id="vehicle0" name="Label" value="400W~600W">400W~600W
+  <input type="radio" id="vehicle0" name="Label" value="600W~800W">600W~800W
+  <input type="radio" id="vehicle0" name="Label" value="800W~1000W">800W~1000W
+  <input type="radio" id="vehicle0" name="Label" value="1000WUP">1000WUP
+</form>
+<!------------------------------------------------------------------->
+
+<button class="btn" onclick="KeyBoardjs()" style="position:absolute;top:700px;left:50px;" name = "KeyBoard" id = "KeyBoard"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/KeyBoard.jpg" width="100" height="100" ></button><!--放置圖片按鈕-->
+<button class="btn" onclick="Mousejs()" style="position:absolute;top:700px;left:250px;" name = "Mouse" id = "Mouse"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Mouse.jpg" width="100" height="100" ></button>
+<button class="btn" onclick="Speskerjs()" style="position:absolute;top:700px;left:450px;" name = "Spesker" id = "Spesker"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Spesker.jpg" width="100" height="100" ></button>
+<button class="btn" onclick="FANjs()" style="position:absolute;top:700px;left:650px;" name = "FAN" id = "FAN"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/FAN.jpg" width="100" height="100" ></button>
+<p style="position:absolute;top:800px;left:50px;">KeyBoard</p>
+<p style="position:absolute;top:800px;left:250px;">Mouse</p>
+<p style="position:absolute;top:800px;left:450px;">Spesker</p>
+<p style="position:absolute;top:800px;left:650px;">FAN</p>
+
+<select name="KeyBoard" id="KeyBoardjs"  style="position:absolute;top:840px;left:50px;width:917px;height:25px;"  > <!--下拉式選單 位子 寬度  隱藏  -->
+  <option name="K120"    value="Membrane">羅技 K120 Usb 鍵盤/有線/防濺灑設計, $240</option><!--選單項目-->
+  <option name="Microsoft600"     value="Membrane">微軟 標準鍵盤 600(黑)/有線/USB/三年保, $299 </option>
+  <option name="DuckyOne2"     value="Mechanical">Ducky One 2 87鍵 機械式鍵盤 有線/青軸/中文/Pbt/二色/黑帽/黑白蓋/白光, $2690</option>
+  <option name="CherryMxBoard2.0s"   value="Mechanical">櫻桃 Cherry Mx Board 2.0s Rgb 機械式鍵盤/有線/黑色/茶軸/中文/櫻桃/Rgb, $2690</option>
+</select>
+
+<select name="Mouse" id="Mousejs"  style="position:absolute;top:840px;left:50px;width:917px;height:25px;"  > <!--下拉式選單 位子 寬度  隱藏  -->
+  <option name="Impact_II"    value="wired">華碩 ROG Strix Impact II 電競光學滑鼠/有線/6200dpi/側鍵/79克/Rgb 送TUF P3鼠墊, $990</option><!--選單項目-->
+  <option name="MM710"     value="wired">酷碼 CoolerMaster MM710 電競滑鼠(黑色)/有線/16000dpi/53g, $990</option>
+  <option name="Atheris"     value="wireless">Razer Atheris 雙模藍芽光學滑鼠/藍牙-無線/7200dpi , $788</option>
+  <option name="M590"   value="wireless">羅技 M590 多工無線靜音滑鼠(紅)/無線/藍牙/1000dpi/Unifying, $990</option>
+</select>
+
+<select name="Spesker" id="Speskerjs"  style="position:absolute;top:840px;left:50px;width:917px;height:25px;"  > <!--下拉式選單 位子 寬度  隱藏  -->
+  <option name="Z120"    value="Speskerwired">羅技 Z120 二件式喇叭/有線/功率:1.2W RMS/USB供電, $399</option><!--選單項目-->
+  <option name="G560"     value="Speskerwired">羅技 G560 電競喇叭(三件式)/有線/藍芽/總輸出功率:120w Rms/Rgb/環繞音效, $5990</option>
+  <option name="Creative_Pebble_V3"     value="Speskerwireless">Creative Pebble V3 藍芽喇叭(黑)/無線-藍芽/總功率 16W/Usb-c供電, $1335</option>
+  <option name="GS331"   value="Speskerwireless">圓剛 GS331 戰神巴雷特 Soundbar喇叭/40W虛擬環繞/無線藍芽傳輸/3種EQ音效模式, $1690</option>
+</select>
+
+<select name="FAN" id="FANjs"  style="position:absolute;top:840px;left:50px;width:917px;height:25px;"  > <!--下拉式選單 位子 寬度  隱藏  -->
+  <option name="K120"    value="Membrane">Antec Prizm 120 A.RGB 3+2+C 光稜扇 (3顆A.RGB風扇+2燈條+控制器) /液壓軸承, $2690</option><!--選單項目-->
+  <option name="Microsoft600"     value="Membrane">酷碼 MasterFan MF120 Halo 白 風扇/雙環A.RGB/防脫線/PWM(MFL-B2DW-18NPA-R1), $499</option>
+  <option name="DuckyOne2"     value="Mechanical">MONTECH AIR FAN P120 12cm 風扇/雙顆裝/1500RPM/PWM(含分接線), $499</option>
+</select>
+
+<h4 style="position:absolute;top:890px;left:50px;">進階搜尋</h4>
+
+<button class="btn" onclick="KeyBoardjs2()" style="position:absolute;top:940px;left:50px;" name = "Magnifier11" id = "Magnifier11"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Magnifier.jpg" width="10" height="10" ></button>
+<button class="btn" onclick="Mousejs2()" style="position:absolute;top:940px;left:250px;" name = "Magnifier12" id = "Magnifier12"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Magnifier.jpg" width="10" height="10" ></button>
+<button class="btn" onclick="Speskerjs2()" style="position:absolute;top:940px;left:450px;" name = "Magnifier13" id = "Magnifier13"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Magnifier.jpg" width="10" height="10" ></button>
+<button class="btn" onclick="FANjs2()" style="position:absolute;top:940px;left:650px;" name = "Magnifier14" id = "Magnifier14"><img src="http://210.70.80.111/108021003/%E7%B6%B2%E9%A0%81%E7%B3%BB%E7%B5%B1%E9%96%8B%E7%99%BC/img/Magnifier.jpg" width="10" height="10" ></button>
+
+<form style="position:absolute;top:970px;left:50px;visibility: hidden;" id="KeyBoardjs2" ><!--checkbox-->
+  <input type="radio" id="vehicle0" name="Label" value="Membrane">薄膜鍵盤
+  <input type="radio" id="vehicle0" name="Label" value="Mechanical">機械式鍵盤
+</form>
+
+<form style="position:absolute;top:970px;left:250px;visibility: hidden;" id="Mousejs2" ><!--checkbox-->
+  <input type="radio" id="vehicle0" name="Label" value="wired">有線
+  <input type="radio" id="vehicle0" name="Label" value="wireless">無線
+</form>
+
+<form style="position:absolute;top:970px;left:450px;visibility: hidden;" id="Speskerjs2" ><!--checkbox-->
+  <input type="radio" id="vehicle0" name="Label" value="Speskerwired">有線
+  <input type="radio" id="vehicle0" name="Label" value="Speskerwireless">無線
+</form>
+
+<form style="position:absolute;top:970px;left:650px;visibility: hidden;" id="FANjs2" ><!--checkbox-->
+  <input type="radio" id="vehicle0" name="Label" value="NaN">NaN
+</form>
+
+<p style="position:absolute;top:1500px;left:50px;">====================================================</p>
+
+<!-- -------------------------------------------------- -->
+
+<script>
+function Laptopjs(){   //設定下拉式選單可視度
+	document.getElementById("Laptopjs").style.visibility = "visible";
+  document.getElementById("CPUjs").style.visibility = "hidden";
+  document.getElementById("Motherboardjs").style.visibility = "hidden";
+  document.getElementById("RAMjs").style.visibility = "hidden";
+  document.getElementById("SSDjs").style.visibility = "hidden";
+}
+
+function Laptopjs2(){   //設定放大鏡功能可視度 
+	document.getElementById("Laptopjs2").style.visibility = "visible";
+  document.getElementById("CPUjs2").style.visibility = "hidden";
+  document.getElementById("Motherboardjs2").style.visibility = "hidden";
+  document.getElementById("RAMjs2").style.visibility = "hidden";
+  document.getElementById("SSDjs2").style.visibility = "hidden";
+}
+
+function CPUjs(){   //設定下拉式選單可視度
+	document.getElementById("Laptopjs").style.visibility = "hidden";
+  document.getElementById("CPUjs").style.visibility = "visible";
+  document.getElementById("Motherboardjs").style.visibility = "hidden";
+  document.getElementById("RAMjs").style.visibility = "hidden";
+  document.getElementById("SSDjs").style.visibility = "hidden";
+}
+
+function CPUjs2(){   //設定放大鏡功能可視度
+	document.getElementById("Laptopjs2").style.visibility = "hidden";
+  document.getElementById("CPUjs2").style.visibility = "visible";
+  document.getElementById("Motherboardjs2").style.visibility = "hidden";
+  document.getElementById("RAMjs2").style.visibility = "hidden";
+  document.getElementById("SSDjs2").style.visibility = "hidden";
+}
+
+function Motherboardjs(){   //設定下拉式選單可視度
+	document.getElementById("Laptopjs").style.visibility = "hidden";
+  document.getElementById("CPUjs").style.visibility = "hidden";
+  document.getElementById("Motherboardjs").style.visibility = "visible";
+  document.getElementById("RAMjs").style.visibility = "hidden";
+  document.getElementById("SSDjs").style.visibility = "hidden";
+}
+
+function Motherboardjs2(){   //設定放大鏡功能可視度
+	document.getElementById("Laptopjs2").style.visibility = "hidden";
+  document.getElementById("CPUjs2").style.visibility = "hidden";
+  document.getElementById("Motherboardjs2").style.visibility = "visible";
+  document.getElementById("RAMjs2").style.visibility = "hidden";
+  document.getElementById("SSDjs2").style.visibility = "hidden";
+}
+
+function RAMjs(){   //設定下拉式選單可視度
+	document.getElementById("Laptopjs").style.visibility = "hidden";
+  document.getElementById("CPUjs").style.visibility = "hidden";
+  document.getElementById("Motherboardjs").style.visibility = "hidden";
+  document.getElementById("RAMjs").style.visibility = "visible";
+  document.getElementById("SSDjs").style.visibility = "hidden";
+}
+
+function RAMjs2(){   //設定放大鏡功能可視度
+	document.getElementById("Laptopjs2").style.visibility = "hidden";
+  document.getElementById("CPUjs2").style.visibility = "hidden";
+  document.getElementById("Motherboardjs2").style.visibility = "hidden";
+  document.getElementById("RAMjs2").style.visibility = "visible";
+  document.getElementById("SSDjs2").style.visibility = "hidden";
+
+}
+
+function SSDjs(){   //設定下拉式選單可視度
+	document.getElementById("Laptopjs").style.visibility = "hidden";
+  document.getElementById("CPUjs").style.visibility = "hidden";
+  document.getElementById("Motherboardjs").style.visibility = "hidden";
+  document.getElementById("RAMjs").style.visibility = "hidden";
+  document.getElementById("SSDjs").style.visibility = "visible";
+}
+
+function SSDjs2(){   //設定放大鏡功能可視度
+	document.getElementById("Laptopjs2").style.visibility = "hidden";
+  document.getElementById("CPUjs2").style.visibility = "hidden";
+  document.getElementById("Motherboardjs2").style.visibility = "hidden";
+  document.getElementById("RAMjs2").style.visibility = "hidden";
+  document.getElementById("SSDjs2").style.visibility = "visible";
+}
+
+// --------------------------
+
+function HDDjs(){   //設定下拉式選單可視度
+	document.getElementById("HDDjs").style.visibility = "visible";
+  document.getElementById("VGAjs").style.visibility = "hidden";
+  document.getElementById("Screenjs").style.visibility = "hidden";
+  document.getElementById("CASEjs").style.visibility = "hidden";
+  document.getElementById("PowerSupplyjs").style.visibility = "hidden";
+}
+
+function HDDjs2(){   //設定放大鏡功能可視度
+	document.getElementById("HDDjs2").style.visibility = "visible";
+  document.getElementById("VGAjs2").style.visibility = "hidden";
+  document.getElementById("Screenjs2").style.visibility = "hidden";
+  document.getElementById("CASEjs2").style.visibility = "hidden";
+  document.getElementById("PowerSupplyjs2").style.visibility = "hidden";
+}
+
+function VGAjs(){   //設定下拉式選單可視度
+	document.getElementById("HDDjs").style.visibility = "hidden";
+  document.getElementById("VGAjs").style.visibility = "visible";
+  document.getElementById("Screenjs").style.visibility = "hidden";
+  document.getElementById("CASEjs").style.visibility = "hidden";
+  document.getElementById("PowerSupplyjs").style.visibility = "hidden";
+}
+
+function VGAjs2(){   //設定放大鏡功能可視度
+	document.getElementById("HDDjs2").style.visibility = "hidden";
+  document.getElementById("VGAjs2").style.visibility = "visible";
+  document.getElementById("Screenjs2").style.visibility = "hidden";
+  document.getElementById("CASEjs2").style.visibility = "hidden";
+  document.getElementById("PowerSupplyjs2").style.visibility = "hidden";
+}
+
+function Screenjs(){   //設定下拉式選單可視度
+	document.getElementById("HDDjs").style.visibility = "hidden";
+  document.getElementById("VGAjs").style.visibility = "hidden";
+  document.getElementById("Screenjs").style.visibility = "visible";
+  document.getElementById("CASEjs").style.visibility = "hidden";
+  document.getElementById("PowerSupplyjs").style.visibility = "hidden";
+}
+
+function Screenjs2(){   //設定放大鏡功能可視度
+	document.getElementById("HDDjs2").style.visibility = "hidden";
+  document.getElementById("VGAjs2").style.visibility = "hidden";
+  document.getElementById("Screenjs2").style.visibility = "visible";
+  document.getElementById("CASEjs2").style.visibility = "hidden";
+  document.getElementById("PowerSupplyjs2").style.visibility = "hidden";
+}
+
+function CASEjs(){   //設定下拉式選單可視度
+	document.getElementById("HDDjs").style.visibility = "hidden";
+  document.getElementById("VGAjs").style.visibility = "hidden";
+  document.getElementById("Screenjs").style.visibility = "hidden";
+  document.getElementById("CASEjs").style.visibility = "visible";
+  document.getElementById("PowerSupplyjs").style.visibility = "hidden";
+}
+
+function CASEjs2(){   //設定放大鏡功能可視度
+	document.getElementById("HDDjs2").style.visibility = "hidden";
+  document.getElementById("VGAjs2").style.visibility = "hidden";
+  document.getElementById("Screenjs2").style.visibility = "hidden";
+  document.getElementById("CASEjs2").style.visibility = "visible";
+  document.getElementById("PowerSupplyjs2").style.visibility = "hidden";
+}
+
+function PowerSupplyjs(){   //設定下拉式選單可視度
+	document.getElementById("HDDjs").style.visibility = "hidden";
+  document.getElementById("VGAjs").style.visibility = "hidden";
+  document.getElementById("Screenjs").style.visibility = "hidden";
+  document.getElementById("CASEjs").style.visibility = "hidden";
+  document.getElementById("PowerSupplyjs").style.visibility = "visible";
+}
+
+function PowerSupplyjs2(){   //設定放大鏡功能可視度
+	document.getElementById("HDDjs2").style.visibility = "hidden";
+  document.getElementById("VGAjs2").style.visibility = "hidden";
+  document.getElementById("Screenjs2").style.visibility = "hidden";
+  document.getElementById("CASEjs2").style.visibility = "hidden";
+  document.getElementById("PowerSupplyjs2").style.visibility = "visible";
+}
+
+//----------------------------------
+
+function KeyBoardjs(){   //設定下拉式選單可視度
+	document.getElementById("KeyBoardjs").style.visibility = "visible";
+  document.getElementById("Mousejs").style.visibility = "hidden";
+  document.getElementById("Speskerjs").style.visibility = "hidden";
+  document.getElementById("FANjs").style.visibility = "hidden";
+}
+
+function KeyBoardjs2(){   //設定放大鏡功能可視度
+	document.getElementById("KeyBoardjs2").style.visibility = "visible";
+  document.getElementById("Mousejs2").style.visibility = "hidden";
+  document.getElementById("Speskerjs2").style.visibility = "hidden";
+  document.getElementById("FANjs2").style.visibility = "hidden";
+}
+
+function Mousejs(){   //設定下拉式選單可視度
+	document.getElementById("KeyBoardjs").style.visibility = "hidden";
+  document.getElementById("Mousejs").style.visibility = "visible";
+  document.getElementById("Speskerjs").style.visibility = "hidden";
+  document.getElementById("FANjs").style.visibility = "hidden";
+}
+
+function Mousejs2(){   //設定放大鏡功能可視度
+	document.getElementById("KeyBoardjs2").style.visibility = "hidden";
+  document.getElementById("Mousejs2").style.visibility = "visible";
+  document.getElementById("Speskerjs2").style.visibility = "hidden";
+  document.getElementById("FANjs2").style.visibility = "hidden";
+}
+
+function Speskerjs(){   //設定下拉式選單可視度
+	document.getElementById("KeyBoardjs").style.visibility = "hidden";
+  document.getElementById("Mousejs").style.visibility = "hidden";
+  document.getElementById("Speskerjs").style.visibility = "visible";
+  document.getElementById("FANjs").style.visibility = "hidden";
+}
+
+function Speskerjs2(){   //設定放大鏡功能可視度
+	document.getElementById("KeyBoardjs2").style.visibility = "hidden";
+  document.getElementById("Mousejs2").style.visibility = "hidden";
+  document.getElementById("Speskerjs2").style.visibility = "visible";
+  document.getElementById("FANjs2").style.visibility = "hidden";
+}
+
+function FANjs(){   //設定下拉式選單可視度
+	document.getElementById("KeyBoardjs").style.visibility = "hidden";
+  document.getElementById("Mousejs").style.visibility = "hidden";
+  document.getElementById("Speskerjs").style.visibility = "hidden";
+  document.getElementById("FANjs").style.visibility = "visible";
+}
+
+function FANjs2(){   //設定放大鏡功能可視度
+	document.getElementById("KeyBoardjs2").style.visibility = "hidden";
+  document.getElementById("Mousejs2").style.visibility = "hidden";
+  document.getElementById("Speskerjs2").style.visibility = "hidden";
+  document.getElementById("FANjs2").style.visibility = "visible";
+}
+
+</script>
+
+</body>
+</html>
